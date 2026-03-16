@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mini Blog - Laboratorio 5</title>
+  <link rel="stylesheet" href="./assets/css/styles.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <h1>Mini Blog</h1>
+      <p class="subtitle">Laboratorio 5 - JavaScript + APIs + UI States</p>
+
+      <nav class="nav">
+        <button class="nav-btn active" data-view="home">Home</button>
+        <button class="nav-btn" data-view="create">Crear Post</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container main-content">
+    <!-- HOME VIEW -->
+    <section id="home-view" class="view active">
+      <div class="toolbar">
+        <div class="search-box">
+          <input
+            type="text"
+            id="search-input"
+            placeholder="Buscar posts por texto..."
+          />
+          <button id="search-btn">Buscar</button>
+          <button id="clear-search-btn" class="secondary">Limpiar</button>
+        </div>
+      </div>
+
+      <section class="state-section">
+        <div id="posts-state-container"></div>
+      </section>
+
+      <section id="posts-list" class="posts-grid"></section>
+    </section>
+
+    <!-- CREATE VIEW -->
+    <section id="create-view" class="view">
+      <div class="form-card">
+        <h2>Crear nuevo post</h2>
+        <form id="create-post-form">
+          <div class="form-group">
+            <label for="post-title">Título</label>
+            <input type="text" id="post-title" name="title" maxlength="120" required />
+          </div>
+
+          <div class="form-group">
+            <label for="post-body">Contenido</label>
+            <textarea id="post-body" name="body" rows="6" maxlength="1000" required></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="post-user-id">User ID</label>
+            <input type="number" id="post-user-id" name="userId" min="1" required />
+          </div>
+
+          <div class="form-actions">
+            <button type="submit">Crear post</button>
+            <button type="button" id="reset-form-btn" class="secondary">Limpiar</button>
+          </div>
+        </form>
+
+        <div id="create-state-container" class="create-state-container"></div>
+      </div>
+    </section>
+  </main>
+
+  <script type="module" src="./js/app.js"></script>
+</body>
+</html>
