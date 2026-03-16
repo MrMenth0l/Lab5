@@ -1,4 +1,4 @@
-import { getPosts, searchPostsByText, createPost } from './api/postsApi.js';
+import { getPosts, searchPostsByText, createPost } from './api/postsAPI.js';
 import { renderState, clearState } from './components/uiState.js';
 import { renderPosts, clearPosts } from './components/postsView.js';
 import { getFormData, resetForm } from './components/createPostView.js';
