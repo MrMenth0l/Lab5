@@ -1,0 +1,33 @@
+.detail-card {
+  max-width: 900px;
+}
+
+.detail-top {
+  border-bottom: 1px dashed var(--border);
+  padding-bottom: 0.6rem;
+}
+
+.detail-title {
+  margin: 0;
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  line-height: 1.22;
+}
+
+.detail-meta,
+.detail-stats {
+  margin: 0.35rem 0 0;
+  color: var(--muted);
+}
+
+.detail-body {
+  margin: 0;
+  line-height: 1.7;
+  color: var(--text);
+  white-space: pre-wrap;
+}
+
+.detail-actions {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}

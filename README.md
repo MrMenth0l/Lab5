@@ -1,43 +1,85 @@
-# Laboratorio 5 - Mini Blog con DummyJSON
+# BlogBoard - Laboratorio 5
 
-## Descripción
-Aplicación web desarrollada con HTML, CSS y JavaScript puro para consumir la API pública DummyJSON Posts.
+BlogBoard es una aplicación web modular creada con HTML, CSS y JavaScript puro. Consume la API pública DummyJSON para listar publicaciones, ver detalles, crear posts con validación, filtrar contenido y gestionar eliminación simulada en interfaz.
 
-## Funcionalidades
-- Home con listado de posts
-- Búsqueda de posts por texto
-- Formulario para crear posts
-- UI States:
-  - idle
+## Tecnologías
+- HTML5
+- CSS3 (arquitectura modular por componentes y páginas)
+- JavaScript ES Modules (sin frameworks)
+- API pública: DummyJSON
+
+## Funcionalidades implementadas
+- Listado dinámico de publicaciones con:
+  - título
+  - resumen
+  - autor
+  - botón `Ver más`
+- Paginación del listado
+- Vista detalle por publicación (`#/post/:id`)
+- Formulario de creación con validación JavaScript:
+  - título obligatorio, mínimo 5 caracteres
+  - contenido obligatorio, mínimo 20 caracteres
+  - autor obligatorio
+- Solicitud `POST` real a la API (`/posts/add`)
+- Búsqueda + 3 filtros mínimos:
+  - texto
+  - autor
+  - tag
+  - ordenamiento (extra)
+- Gestión de publicaciones:
+  - eliminación simulada (frontend)
+- Sección adicional obligatoria:
+  - `Autores` (`#/authors`)
+- Estados UI visibles:
   - loading
   - success
+  - error
   - empty
-  - error con botón de retry
+- Diseño responsive (desktop, tablet, mobile)
 
-## API utilizada
-- GET /posts
-- GET /posts/search?q=texto
-- POST /posts/add
+## Endpoints usados
+- `GET /posts`
+- `GET /posts/:id`
+- `GET /users`
+- `POST /posts/add`
 
-## Estructura
-- index.html
-- assets/css/styles.css
-- js/app.js
-- js/api/postsApi.js
-- js/components/postsView.js
-- js/components/createPostView.js
-- js/components/uiState.js
-- js/utils/helpers.js
+## Navegación (hash router)
+- `#/home`
+- `#/post/:id`
+- `#/create`
+- `#/authors`
 
-## Instalación
-1. Clonar el repositorio
-2. Abrir `index.html` en el navegador
+## Estructura del proyecto
+```text
+.
+├── index.html
+├── css/
+│   ├── main.css
+│   ├── components/
+│   └── pages/
+├── js/
+│   ├── app/
+│   ├── api/
+│   ├── services/
+│   ├── ui/
+│   ├── utils/
+│   └── features/
+├── assets/
+├── docs/
+├── .gitignore
+└── README.md
+```
 
-## Publicación
-Se puede publicar usando GitHub Pages.
+## Ejecución local
+1. Clona el repositorio.
+2. Abre `index.html` directamente en el navegador.
+3. Navega entre rutas usando el menú superior.
 
-## Requisitos del laboratorio cubiertos
-- HTML, CSS y JS puro
-- Uso de API REST
-- UI States mínimos
-- Home + Crear post
+## Notas de comportamiento
+- La API DummyJSON simula escritura; por eso la eliminación se maneja localmente en estado/UI.
+- Los cambios de creación y eliminación se reflejan inmediatamente en la interfaz para la demostración.
+
+## Entrega
+- Repositorio GitHub: pendiente por equipo
+- Video demo: pendiente por equipo
+- Integrantes: pendiente por equipo

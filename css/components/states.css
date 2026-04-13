@@ -1,0 +1,36 @@
+.state-card {
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  border-left-width: 6px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  padding: 0.85rem 0.95rem;
+  display: grid;
+  gap: 0.4rem;
+}
+
+.state-title {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.state-message {
+  margin: 0;
+  color: var(--muted);
+}
+
+.state-loading {
+  border-left-color: var(--warning);
+}
+
+.state-success {
+  border-left-color: var(--success);
+}
+
+.state-error {
+  border-left-color: var(--error);
+}
+
+.state-empty {
+  border-left-color: var(--accent);
+}

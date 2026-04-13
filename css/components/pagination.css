@@ -1,0 +1,30 @@
+.pagination {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem;
+  justify-content: center;
+  margin-top: 0.35rem;
+}
+
+.page-btn {
+  border: 1px solid var(--border);
+  background: #fff;
+  color: var(--text);
+  border-radius: var(--radius-sm);
+  padding: 0.45rem 0.66rem;
+  cursor: pointer;
+  min-width: 2rem;
+  transition: transform 130ms ease, background-color 130ms ease;
+}
+
+.page-btn:hover {
+  transform: translateY(-1px);
+  background: #edf4fb;
+}
+
+.page-btn.active {
+  background: var(--primary);
+  color: #fff;
+  border-color: var(--primary);
+}

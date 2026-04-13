@@ -1,0 +1,243 @@
+@import url("./components/buttons.css");
+@import url("./components/cards.css");
+@import url("./components/forms.css");
+@import url("./components/pagination.css");
+@import url("./components/states.css");
+@import url("./pages/home.css");
+@import url("./pages/detail.css");
+@import url("./pages/create.css");
+@import url("./pages/extra.css");
+
+:root {
+  --bg: #f2f4f8;
+  --bg-soft: #e8edf4;
+  --surface: #ffffff;
+  --surface-alt: #f7fafc;
+  --text: #12233b;
+  --muted: #4f647f;
+  --primary: #0a66c2;
+  --primary-dark: #084f96;
+  --accent: #f0833a;
+  --success: #1f8a4d;
+  --error: #b42323;
+  --warning: #b26a0b;
+  --border: #d4dee9;
+  --shadow: 0 18px 40px rgba(18, 35, 59, 0.1);
+  --radius-lg: 18px;
+  --radius-md: 12px;
+  --radius-sm: 9px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background:
+    radial-gradient(circle at 10% -10%, #d9e8f9 0%, transparent 42%),
+    radial-gradient(circle at 90% 0%, #f8dfcb 0%, transparent 33%),
+    var(--bg);
+  color: var(--text);
+  font-family: "Space Grotesk", "Trebuchet MS", sans-serif;
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Literata", Georgia, serif;
+}
+
+.container {
+  width: min(1160px, 92vw);
+  margin: 0 auto;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: blur(10px);
+  background: linear-gradient(90deg, rgba(10, 102, 194, 0.9), rgba(5, 65, 122, 0.9));
+  color: #fff;
+  box-shadow: var(--shadow);
+}
+
+.header-shell {
+  padding: 1rem 0 1.1rem;
+}
+
+.brand {
+  color: #fff;
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+
+.brand-subtitle {
+  margin: 0.3rem 0 0.9rem;
+  opacity: 0.9;
+}
+
+.main-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+
+.nav-link {
+  padding: 0.58rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  background: rgba(255, 255, 255, 0.12);
+  transition: background-color 160ms ease, transform 160ms ease;
+}
+
+.nav-link:hover {
+  background: rgba(255, 255, 255, 0.28);
+  transform: translateY(-1px);
+}
+
+.nav-link.active {
+  background: #fff;
+  color: var(--primary);
+}
+
+.app-shell {
+  padding: 1.5rem 0 3rem;
+  animation: page-appear 220ms ease;
+}
+
+.ambient-shape {
+  position: fixed;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  filter: blur(45px);
+  z-index: -1;
+}
+
+.ambient-shape-left {
+  background: rgba(240, 131, 58, 0.2);
+  left: -75px;
+  bottom: 20%;
+}
+
+.ambient-shape-right {
+  background: rgba(10, 102, 194, 0.18);
+  right: -60px;
+  top: 18%;
+}
+
+.view-shell {
+  display: grid;
+  gap: 1rem;
+}
+
+.view-header {
+  display: flex;
+  gap: 0.6rem;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+}
+
+.view-title {
+  margin: 0;
+  font-size: clamp(1.5rem, 2.7vw, 2rem);
+}
+
+.view-subtitle {
+  margin: 0.2rem 0 0;
+  color: var(--muted);
+}
+
+.surface-panel {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  padding: 1rem;
+}
+
+.stack {
+  display: grid;
+  gap: 1rem;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.toast-root {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  display: grid;
+  gap: 0.5rem;
+  z-index: 50;
+}
+
+.toast {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-left: 5px solid var(--primary);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow);
+  padding: 0.65rem 0.85rem;
+  max-width: 320px;
+}
+
+.toast-success {
+  border-left-color: var(--success);
+}
+
+.toast-error {
+  border-left-color: var(--error);
+}
+
+@keyframes page-appear {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 760px) {
+  .header-shell {
+    padding-bottom: 0.8rem;
+  }
+
+  .brand {
+    font-size: 1.35rem;
+  }
+
+  .brand-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .main-nav {
+    gap: 0.4rem;
+  }
+
+  .nav-link {
+    font-size: 0.92rem;
+    padding: 0.48rem 0.74rem;
+  }
+}

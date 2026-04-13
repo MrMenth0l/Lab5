@@ -1,0 +1,87 @@
+.filters-form {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.7rem;
+  align-items: end;
+}
+
+.filter-control {
+  display: grid;
+  gap: 0.34rem;
+}
+
+.filter-control label,
+.form-control label {
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.filter-control input,
+.filter-control select,
+.form-control input,
+.form-control textarea,
+.form-control select {
+  font: inherit;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: #fff;
+  color: var(--text);
+  padding: 0.56rem 0.66rem;
+}
+
+.filter-actions {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.create-form-card {
+  max-width: 760px;
+}
+
+.create-form {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.form-control {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.form-control textarea {
+  resize: vertical;
+  min-height: 170px;
+}
+
+.form-actions {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.form-error {
+  min-height: 1rem;
+  margin: 0;
+  color: var(--error);
+  font-size: 0.84rem;
+}
+
+@media (max-width: 992px) {
+  .filters-form {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .filters-form {
+    grid-template-columns: 1fr;
+  }
+
+  .filter-actions,
+  .form-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
